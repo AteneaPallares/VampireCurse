@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private float _moveFB;
     private float _moveLR;
     private float _sensitivity=5f;
+    private float _regeneration = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +61,11 @@ public class PlayerController : MonoBehaviour
             _moveFB = Input.GetAxis("Vertical");
             _moveLR = Input.GetAxis("Horizontal");
             MovePlayer();
-
+            if (_regeneration <= 0)
+            {
+                HealthUpdate(2);
+                _regeneration = 10f;
+            }
             if (Input.GetMouseButton(0))
             {
                 if (_recharge < 0)
@@ -70,6 +75,7 @@ public class PlayerController : MonoBehaviour
                 }
                 
             }
+            _regeneration -= Time.deltaTime;
             _recharge -= Time.deltaTime;
             _updating -= Time.deltaTime;
         }
