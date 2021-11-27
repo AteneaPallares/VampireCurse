@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     private float _recharge;
     private static float _score = 0;
     public float score { get { return _score; } set { _score = value; } }
-    private float _upgrades = 0;
     private Animator _playerAnim;
     private float _updating = 2f;
     [SerializeField]
@@ -142,7 +141,7 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject,0f);
             _audioManager.PlayAudio("Upgrade");
             _uIController.ShowMessage("Vida incrementada");
-             HealthUpdate(10);
+             HealthUpdate(30);
             _updating = 2f;
         }
     }

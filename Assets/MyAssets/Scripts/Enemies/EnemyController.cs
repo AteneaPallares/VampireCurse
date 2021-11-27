@@ -19,10 +19,10 @@ public class EnemyController : MonoBehaviour
     private NavMeshAgent _enemyNav;
     private Animator _enemyAnim;
     private bool _isWalking=false;
-    private float _fireRate=5f;
+    private float _fireRate=10f;
     private bool _killed = false;
     private bool _isAttacking = false;
-    private float _batWait = 1f;
+    private float _batWait = .2f;
     private int _maxbat = 5;
     private int _batLeft = 5;
 

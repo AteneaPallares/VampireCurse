@@ -14,7 +14,7 @@ public class EnemiesManager : MonoBehaviour
     private float _enemiesHealth = 15;
     private static EnemiesManager _instance;
     private float _waitTime = 5f;
-    private float _waiting = 2f;
+    private float _waiting = 5f;
     private bool _creating = false;
     private int _x = -1;
     private int _i = 2;
