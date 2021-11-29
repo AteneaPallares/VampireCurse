@@ -14,6 +14,7 @@ public class EnemiesManager : MonoBehaviour
     private float _enemiesHealth = 15;
     private static EnemiesManager _instance;
     private float _waitTime = 5f;
+    private AudioManager _audioManager;
     private float _waiting = 5f;
     private bool _creating = false;
     private int _x = -1;
@@ -33,8 +34,10 @@ public class EnemiesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _uIController = GameObject.Find("UI").GetComponentInChildren<UIController>();
+        _uIController = GameObject.Find("UI").GetComponent<UIController>();
         _uIController.ShowMessage("Matar o Morir");
+        _audioManager = GameObject.FindObjectOfType<AudioManager>();
+
     }
 
 
@@ -47,6 +50,7 @@ public class EnemiesManager : MonoBehaviour
             _enemiesHealth += 5;
             _round++;
             _uIController.ShowMessage("Ronda " + _round);
+            _audioManager.PlayAudio("Round");
             _creating = true;
             _x = _enemyBases.Length-1;
         }

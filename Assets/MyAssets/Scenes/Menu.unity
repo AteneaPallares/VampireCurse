@@ -676,7 +676,7 @@ MonoBehaviour:
   audios:
   - name: Fondo
     clip: {fileID: 8300000, guid: 74935cb210a7bcb4dbb0e6130ec4f19a, type: 3}
-    volume: 0.288
+    volume: 0.276
     loop: 1
     mute: 0
     source: {fileID: 0}
@@ -691,18 +691,6 @@ MonoBehaviour:
     volume: 0.194
     loop: 0
     mute: 0
-    source: {fileID: 0}
-  - name: Garlic2
-    clip: {fileID: 8300000, guid: 9c544ce5a5e22bf4fa3f0e6f14168a03, type: 3}
-    volume: 0.148
-    loop: 0
-    mute: 0
-    source: {fileID: 0}
-  - name: Explosion
-    clip: {fileID: 8300000, guid: 20d577d2d6937a043a8091a46c926b88, type: 3}
-    volume: 0.156
-    loop: 0
-    mute: 1
     source: {fileID: 0}
   - name: Upgrade
     clip: {fileID: 8300000, guid: 9258e7d9d9f4c8249b101f0eed59b2d5, type: 3}
