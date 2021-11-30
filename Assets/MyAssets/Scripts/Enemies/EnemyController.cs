@@ -23,8 +23,8 @@ public class EnemyController : MonoBehaviour
     private bool _killed = false;
     private bool _isAttacking = false;
     private float _batWait = .2f;
-    private int _maxbat = 5;
-    private int _batLeft = 5;
+    private int _maxbat = 3;
+    private int _batLeft = 3;
 
     private GameObject _weapon;
     [SerializeField]
@@ -129,9 +129,9 @@ public class EnemyController : MonoBehaviour
         if (_health <= 0 && !_killed)
         {
             _audioManager.PlayAudio("Noo");
+            _enemyAnim.SetBool("isWalking", false);
             _enemyAnim.SetTrigger("killed");
             _killed = true;
-            _enemyAnim.SetBool("isWalking", false);
             _playerController.UpdateScore(_scoreByKill * _round);
             _enemiesManager.UpdateEnemies();
             Destroy(gameObject, 2f);
